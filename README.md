@@ -4,7 +4,7 @@ In this project I attempt to replicate the results of one of my favorite paper's
 
 The paper proceeds to introduce CNOT gate noise and explores the Baggins and Adaboost ensemble-learning methods to mitigate the result errors from this noise. In my code I only explored Adaboost which is the more complex and better performing of the two methods. The explanation for Adaboost can be found on pages 5 & 6 of the paper, but I made a slight modification to the method by resampling the training data according to the weights of the samples instead of using a weighted loss function, since the Adam optimizer doesn't seem to work with weighted losses and just ignored the weights. 
 
-This project is divided into two files:
+Since the noise added to their models is artificial, the goal of this project is to see how well Adaboost performs on real QPU's of our time. I do this by training my modules in a noiseless ideal simulation, which hopefully resembles a module trained iteratively on a real quantum computer. I then test these modules on a real quantum computer and assess their performance. Thus,this project is divided into two files:
 1. [VQC Training and testing no noise](MNIST_VQC_Training.ipynb): Trains and tests the VQC with no noise and saves the module weights as well as the Adaboost modules' weights. 
 2. [VQC Testing on Hardware](VQC_Hardware_testing.ipynb): Tests the modules trained with no noise on real IBM Quantum Hardware. 
 
